@@ -29,12 +29,13 @@ public class CurrencyConveterProcessor implements Processor {
 	
 	@Override
 	public void process(Exchange exchange) throws Exception {
-		String input = (String) exchange.getIn().getBody();
+		//String input = (String) exchange.getIn().getBody();
 		
 		ExchangeResponse response = null;
 		ExchangeRequest request = null;
 		try {
-			request = unmarshal(input);
+			//request = unmarshal(input);
+			request = (ExchangeRequest) exchange.getIn().getBody();;
 			ConverterUtil util = new ConverterUtil();
 			util.getEuroMap();
 			double targetAmout = util.convert(Currency.valueOf(request.getSourceCurrencyCode()), 

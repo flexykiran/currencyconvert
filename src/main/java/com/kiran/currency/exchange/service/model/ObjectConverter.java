@@ -8,7 +8,7 @@ import javax.xml.bind.Marshaller;
 
 public class ObjectConverter {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		ExchangeRequest request = new ExchangeRequest();
 		request.setSourceCurrencyCode("EUR");
 		request.setTargetCurrencyCode("USD");
@@ -35,4 +35,4 @@ public class ObjectConverter {
 
 	    return xmlString;
 	}
-}
+*/}

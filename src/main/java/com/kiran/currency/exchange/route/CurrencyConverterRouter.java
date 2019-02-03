@@ -35,12 +35,12 @@ public class CurrencyConverterRouter extends RouteBuilder {
 		
 		from("direct:convert")
 			.log("${body}")
-			.marshal().json(JsonLibrary.Jackson, ExchangeRequest.class)
-			//.convertBodyTo(ExchangeRequest.class)
+			//.marshal().json(JsonLibrary.Jackson, ExchangeRequest.class)
+			.convertBodyTo(ExchangeRequest.class)
 			//.convertBodyTo(String.class)
 			.process(new CurrencyConveterProcessor())
 			.convertBodyTo(String.class)
-			.unmarshal().json(JsonLibrary.Jackson, ExchangeResponse.class)
+			//.unmarshal().json(JsonLibrary.Jackson, ExchangeResponse.class)
 			.log("${body}");
 	}
 }
